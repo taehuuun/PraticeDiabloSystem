@@ -1345,7 +1345,7 @@ MonoBehaviour:
   height: 10
   distance: 20
   angle: 0
-  lookAtHeight: 6
+  lookAtHeight: 9
   smoothSpeed: 0.05
   target: {fileID: 620007485}
 --- !u!1 &1035056689
