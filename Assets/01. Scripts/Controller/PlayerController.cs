@@ -51,13 +51,19 @@ public class PlayerController : MonoBehaviour
             {
                 _agent.SetDestination(hit.point);
             }
-
-            bool isMoving = _agent.remainingDistance > _agent.stoppingDistance;
             
-            Vector3 motion = isMoving ? _agent.velocity * Time.deltaTime : Vector3.zero; 
-            _animator.SetBool(_moveHash,isMoving);
             
-            _controller.Move(motion);
+        }
+        
+        if (_agent.remainingDistance > _agent.stoppingDistance)
+        {
+            _controller.Move(_agent.velocity * Time.deltaTime);
+            _animator.SetBool(_moveHash,true);
+        }
+        else
+        {
+            _controller.Move(Vector3.zero);
+            _animator.SetBool(_moveHash,false);
         }
     }
 
