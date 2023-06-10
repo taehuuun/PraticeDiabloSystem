@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -42,7 +43,19 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100, groundLayerMast))
             {
+                _agent.SetDestination(hit.point);
             }
+
+            Vector3 motion = _agent.remainingDistance > _agent.stoppingDistance
+                ? _agent.velocity * Time.deltaTime
+                : Vector3.zero; 
+            
+            _controller.Move(motion);
         }
+    }
+
+    private void LateUpdate()
+    {
+        transform.position = _agent.nextPosition;
     }
 }
