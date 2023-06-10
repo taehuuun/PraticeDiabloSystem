@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,10 +11,15 @@ public class PlayerController : MonoBehaviour
     public float groundCheckDistance = 0.3f;
     private bool _isGround;
     
+    // Animator
+    private readonly int _moveHash = Animator.StringToHash("Move");
+    private readonly int _fallingHash = Animator.StringToHash("Falling");
+    
     // 컴포넌트
     private CharacterController _controller;
     private NavMeshAgent _agent;
     private Camera _camera;
+    private Animator _animator;
 
     private void Start()
     {
@@ -29,6 +33,8 @@ public class PlayerController : MonoBehaviour
         
         // 메인 카메라를 얻음
         _camera = Camera.main;
+
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -46,9 +52,10 @@ public class PlayerController : MonoBehaviour
                 _agent.SetDestination(hit.point);
             }
 
-            Vector3 motion = _agent.remainingDistance > _agent.stoppingDistance
-                ? _agent.velocity * Time.deltaTime
-                : Vector3.zero; 
+            bool isMoving = _agent.remainingDistance > _agent.stoppingDistance;
+            
+            Vector3 motion = isMoving ? _agent.velocity * Time.deltaTime : Vector3.zero; 
+            _animator.SetBool(_moveHash,isMoving);
             
             _controller.Move(motion);
         }
