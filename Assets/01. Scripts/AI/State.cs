@@ -1,5 +1,4 @@
-using UnityEngine;
-
-public class State : MonoBehaviour
+public abstract class State<T>
 {
+    protected StateMachine<T> stateMachine;
 }
