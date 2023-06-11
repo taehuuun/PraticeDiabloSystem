@@ -1,5 +1,3 @@
-using UnityEngine;
-
-public class StateMachine : MonoBehaviour
+public class StateMachine<T>
 {
 }
