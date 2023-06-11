@@ -20,7 +20,7 @@ public class TopDownCamera : MonoBehaviour
         HandleCamera();
     }
 
-    private void HandleCamera()
+    public void HandleCamera()
     {
         if (!target)
         {
