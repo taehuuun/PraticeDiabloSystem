@@ -41,10 +41,10 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 curPosition = transform.position;
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(curPosition, viewRadius);
+        Gizmos.DrawWireSphere(curPosition, viewRadius);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawSphere(curPosition, attackRange);
+        Gizmos.DrawWireSphere(curPosition, attackRange);
     }
 
     public Transform SearchEnemy()
