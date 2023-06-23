@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 118436033}
   - component: {fileID: 118436032}
   - component: {fileID: 118436031}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 125461836}
   - component: {fileID: 125461835}
   - component: {fileID: 125461834}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 398561017}
   - component: {fileID: 398561016}
   - component: {fileID: 398561015}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 662943784}
   - component: {fileID: 662943783}
   - component: {fileID: 662943782}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 692963188}
   - component: {fileID: 692963187}
   - component: {fileID: 692963186}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 693291092}
   - component: {fileID: 693291091}
   - component: {fileID: 693291090}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -969,7 +969,7 @@ GameObject:
   - component: {fileID: 845173235}
   - component: {fileID: 845173234}
   - component: {fileID: 845173233}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 1035056693}
   - component: {fileID: 1035056692}
   - component: {fileID: 1035056691}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1290,7 +1290,7 @@ GameObject:
   - component: {fileID: 1450662308}
   - component: {fileID: 1450662307}
   - component: {fileID: 1450662306}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1395,7 @@ GameObject:
   - component: {fileID: 1581005246}
   - component: {fileID: 1581005245}
   - component: {fileID: 1581005244}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1500,7 +1500,7 @@ GameObject:
   - component: {fileID: 1660144717}
   - component: {fileID: 1660144716}
   - component: {fileID: 1660144715}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1620,6 +1620,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1741719820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741719814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd99394b18187d9499cd983cf4cd433f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 20
+  viewAngle: 90
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 64
+  detectTargets: []
 --- !u!1 &1765135987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1653,7 @@ GameObject:
   - component: {fileID: 1765135991}
   - component: {fileID: 1765135990}
   - component: {fileID: 1765135989}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1734,7 +1755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1806470743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1778,7 +1799,7 @@ GameObject:
   - component: {fileID: 1854675560}
   - component: {fileID: 1854675559}
   - component: {fileID: 1854675558}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1904,7 @@ GameObject:
   - component: {fileID: 1860433087}
   - component: {fileID: 1860433086}
   - component: {fileID: 1860433085}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Box (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2002,23 +2023,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6481279436615056347, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6481279436615056347, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6481279436615056347, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6481279436615056347, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6481279436615056347, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6481279436615056347, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2026,7 +2047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6481279436615056347, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6481279436615056347, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2043,6 +2064,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7540919283991660289, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1741719819}
+    - targetCorrespondingSourceObject: {fileID: 7540919283991660289, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1741719820}
   m_SourcePrefab: {fileID: 100100000, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
 --- !u!1001 &7750410572162486870
 PrefabInstance:

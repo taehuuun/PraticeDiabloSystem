@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-public class FieldOfViewEditor : MonoBehaviour
+[CustomEditor(typeof(FieldOfView))]
+public class FieldOfViewEditor : Editor
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnSceneGUI()
     {
+        FieldOfView fov = (FieldOfView)target;
         
-    }
+        Vector3 fovPosition = fov.transform.position;
+        
+        Handles.color = Color.black;
+        Handles.DrawWireArc(fovPosition, Vector3.up,Vector3.forward,360,fov.viewRadius);
 
-    // Update is called once per frame
-    void Update()
-    {
+        float angle = fov.viewAngle / 2;
+
+        Vector3 viewAngleA = fov.DirFromAngle(-angle, false);
+        Vector3 viewAngleB = fov.DirFromAngle(angle, false);
         
+        Handles.DrawLine(fovPosition, fovPosition + viewAngleA * fov.viewRadius);
+        Handles.DrawLine(fovPosition, fovPosition + viewAngleB * fov.viewRadius);
+
+        Handles.color = Color.red;
+
+        foreach (Transform detectTarget in fov.detectTargets)
+        {
+            Handles.DrawLine(fovPosition,detectTarget.position);
+        }
     }
 }
