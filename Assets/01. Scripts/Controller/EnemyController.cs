@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    protected StateMachine<EnemyController> stateMachine;
+    public StateMachine<EnemyController> StateMachine { get; protected set; }
 
     public Transform target;
     public LayerMask targetLayerMask;
@@ -27,14 +27,14 @@ public class EnemyController : MonoBehaviour
     
     private void Start()
     {
-        stateMachine = new StateMachine<EnemyController>(this,new EnemyIdleState());
-        stateMachine.AddState(new EnemyMoveState());
-        stateMachine.AddState(new EnemyAttackState());
+        StateMachine = new StateMachine<EnemyController>(this,new EnemyIdleState());
+        StateMachine.AddState(new EnemyMoveState());
+        StateMachine.AddState(new EnemyAttackState());
     }
 
     private void Update()
     {
-        stateMachine.Update(Time.deltaTime);
+        StateMachine.Update(Time.deltaTime);
     }
 
     private void OnDrawGizmos()
