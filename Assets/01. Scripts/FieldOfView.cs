@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FieldOfView : MonoBehaviour
 {
@@ -10,11 +12,16 @@ public class FieldOfView : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
-    private List<Transform> _detectTargets = new List<Transform>();
+    public List<Transform> DetectTargets { get; private set; }
     private Transform _nearestTarget;
     
     private float _distanceTarget;
 
+    private void Start()
+    {
+        DetectTargets = new List<Transform>();
+    }
+    
     private void Update()
     {
         FindDetectTargets();
@@ -24,7 +31,7 @@ public class FieldOfView : MonoBehaviour
     {
         _distanceTarget = 0f;
         _nearestTarget = null;
-        _detectTargets.Clear();
+        DetectTargets.Clear();
 
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
@@ -40,7 +47,7 @@ public class FieldOfView : MonoBehaviour
 
                 if (!Physics.Raycast(transform.position, dirToTarget, distance, obstacleMask))
                 {
-                    _detectTargets.Add(target);
+                    DetectTargets.Add(target);
 
                     if (_nearestTarget == null || (_distanceTarget > distance))
                     {
@@ -50,5 +57,17 @@ public class FieldOfView : MonoBehaviour
                 }
             }
         }
+    }
+
+    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
+    {
+        if (!angleIsGlobal)
+        {
+            angleInDegrees += transform.eulerAngles.y;
+        }
+
+        float angle = angleInDegrees * Mathf.Deg2Rad;
+
+        return new Vector3(Mathf.Sin(angle), 0, MathF.Cos(angle));
     }
 }
