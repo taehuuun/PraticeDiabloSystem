@@ -50,8 +50,7 @@ public class EnemyController : MonoBehaviour
     public Transform SearchEnemy()
     {
         target = null;
-        Collider[] targetViews = null;
-        Physics.OverlapSphereNonAlloc(transform.position, viewRadius, targetViews, targetLayerMask);
+        Collider[] targetViews = Physics.OverlapSphere(transform.position, viewRadius,targetLayerMask);
 
         if (targetViews.Length > 0)
         {
