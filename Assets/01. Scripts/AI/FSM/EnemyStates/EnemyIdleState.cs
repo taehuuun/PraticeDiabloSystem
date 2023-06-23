@@ -27,7 +27,7 @@ public class EnemyIdleState : State<EnemyController>
 
         if (enemy)
         {
-            if (context.isAbleAttack)
+            if (context.IsAbleAttack)
             {
                 stateMachine.ChangeState<EnemyAttackState>();
             }

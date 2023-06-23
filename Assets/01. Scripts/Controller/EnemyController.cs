@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     public float viewRadius;
     public float attackRange;
 
-    public bool isAbleAttack
+    public bool IsAbleAttack
     {
         get
         {

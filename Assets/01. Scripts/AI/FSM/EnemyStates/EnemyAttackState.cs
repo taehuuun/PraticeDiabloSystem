@@ -13,7 +13,7 @@ public class EnemyAttackState : State<EnemyController>
 
     public override void OnEnter()
     {
-        if (context.isAbleAttack)
+        if (context.IsAbleAttack)
         {
             _animator.SetTrigger(_hashAttack);
         }
