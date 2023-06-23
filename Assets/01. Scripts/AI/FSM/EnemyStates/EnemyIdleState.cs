@@ -5,8 +5,8 @@ public class EnemyIdleState : State<EnemyController>
     private Animator _animator;
     private CharacterController _controller;
 
-    protected int isMove = Animator.StringToHash("Move");
-    protected int moveSpeed = Animator.StringToHash("MoveSpeed");
+    protected readonly int isMove = Animator.StringToHash("Move");
+    protected readonly int moveSpeed = Animator.StringToHash("MoveSpeed");
     
     public override void OnInitialized()
     {
