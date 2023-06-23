@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FieldOfView : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class FieldOfView : MonoBehaviour
     public LayerMask obstacleMask;
 
     public List<Transform> detectTargets = new List<Transform>();
-    private Transform _nearestTarget;
+    public Transform Target { get; private set;}
     
     private float _distanceTarget;
 
@@ -24,7 +25,7 @@ public class FieldOfView : MonoBehaviour
     private void FindDetectTargets()
     {
         _distanceTarget = 0f;
-        _nearestTarget = null;
+        Target = null;
         detectTargets.Clear();
 
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
@@ -43,9 +44,9 @@ public class FieldOfView : MonoBehaviour
                 {
                     detectTargets.Add(target);
 
-                    if (_nearestTarget == null || (_distanceTarget > distance))
+                    if (Target == null || (_distanceTarget > distance))
                     {
-                        _nearestTarget = target;
+                        Target = target;
                         _distanceTarget = distance;
                     }
                 }

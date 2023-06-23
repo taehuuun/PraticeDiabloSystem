@@ -19,7 +19,7 @@ public class EnemyMoveState : State<EnemyController>
 
     public override void OnEnter()
     {
-        _agent.SetDestination(context.target.position);
+        _agent.SetDestination(context.Target.position);
         _animator.SetBool(_hashMove, true);
     }
 
@@ -29,7 +29,7 @@ public class EnemyMoveState : State<EnemyController>
 
         if (enemy)
         {
-            _agent.SetDestination(context.target.position);
+            _agent.SetDestination(context.Target.position);
 
             if (_agent.remainingDistance > _agent.stoppingDistance)
             {
