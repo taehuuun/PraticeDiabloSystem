@@ -8,9 +8,6 @@ public class EnemyController : MonoBehaviour
 
     public Transform Target => _fov.Target;
 
-    // public Transform target;
-    // public LayerMask targetLayerMask;
-    // public float viewRadius;
     public float attackRange;
 
     public bool IsAbleAttack
@@ -30,7 +27,7 @@ public class EnemyController : MonoBehaviour
     
     private void Start()
     {
-        _fov = gameObject.GetComponent<FieldOfView>();
+        _fov = GetComponent<FieldOfView>();
         StateMachine = new StateMachine<EnemyController>(this,new EnemyIdleState());
         StateMachine.AddState(new EnemyMoveState());
         StateMachine.AddState(new EnemyAttackState());
@@ -39,16 +36,6 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         StateMachine.Update(Time.deltaTime);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Vector3 curPosition = transform.position;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(curPosition, _fov.viewRadius);
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(curPosition, attackRange);
     }
 
     public Transform SearchEnemy()
