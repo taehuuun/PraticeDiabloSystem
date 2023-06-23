@@ -1,18 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class EnemyMoveState : MonoBehaviour
+public class EnemyMoveState : State<EnemyController>
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Update(float deltaTime)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
