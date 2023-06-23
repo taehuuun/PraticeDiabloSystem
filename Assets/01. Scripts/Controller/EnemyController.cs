@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -34,6 +35,16 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         stateMachine.Update(Time.deltaTime);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 curPosition = transform.position;
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(curPosition, viewRadius);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(curPosition, attackRange);
     }
 
     public Transform SearchEnemy()
