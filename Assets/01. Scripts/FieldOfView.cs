@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class FieldOfView : MonoBehaviour
 {
@@ -14,14 +14,25 @@ public class FieldOfView : MonoBehaviour
 
     public List<Transform> detectTargets = new List<Transform>();
     public Transform Target { get; private set;}
+
+    public float delay = 0.2f;
     
     private float _distanceTarget;
 
-    private void Update()
+    private void Start()
     {
-        FindDetectTargets();
+        StartCoroutine(FindDetectTargetsDelay(delay));
     }
     
+    private IEnumerator FindDetectTargetsDelay(float delayTime)
+    {
+        while (true)
+        {
+            FindDetectTargets();
+            yield return new WaitForSeconds(delayTime);
+        }
+    }
+
     private void FindDetectTargets()
     {
         _distanceTarget = 0f;
