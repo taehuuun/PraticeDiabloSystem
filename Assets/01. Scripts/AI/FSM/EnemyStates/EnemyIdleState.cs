@@ -17,9 +17,24 @@ public class EnemyIdleState : State<EnemyController>
     public override void OnEnter()
     {
         _animator?.SetBool(isMove, false);
+        _animator?.SetFloat(moveSpeed, 0f);
+        _controller?.Move(Vector3.zero);
     }
 
     public override void Update(float deltaTime)
     {
+        Transform enemy = context.SearchEnemy();
+
+        if (enemy)
+        {
+            if (context.isAbleAttack)
+            {
+                stateMachine.ChangeState<EnemyAttackState>();
+            }
+            else
+            {
+                stateMachine.ChangeState<EnemyMoveState>();
+            }
+        }
     }
 }
