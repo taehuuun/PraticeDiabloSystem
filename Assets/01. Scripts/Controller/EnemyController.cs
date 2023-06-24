@@ -30,13 +30,14 @@ public class EnemyController : MonoBehaviour
         }
     }
     
-    private void Start()
+    protected virtual void Start()
     {
         _fov = GetComponent<FieldOfView>();
-        StateMachine = new StateMachine<EnemyController>(this,new EnemyMoveToWayPoint());
-        StateMachine.AddState(new EnemyIdleState(isPatrol));
-        StateMachine.AddState(new EnemyMoveState());
-        StateMachine.AddState(new EnemyAttackState());
+        State<EnemyController> startState = isPatrol ? new EnemyMoveToWayPoint() : new EnemyIdleState(false);
+        StateMachine = new StateMachine<EnemyController>(this,startState);
+        // StateMachine.AddState(new EnemyIdleState(isPatrol));
+        // StateMachine.AddState(new EnemyMoveState());
+        // StateMachine.AddState(new EnemyAttackState());
     }
 
     private void Update()
