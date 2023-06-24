@@ -2204,6 +2204,7 @@ MonoBehaviour:
   wayPoints: []
   targetWayPoint: {fileID: 0}
   attackRange: 5.5
+  isPatrol: 0
 --- !u!143 &4898386270455939073
 CharacterController:
   m_ObjectHideFlags: 0
