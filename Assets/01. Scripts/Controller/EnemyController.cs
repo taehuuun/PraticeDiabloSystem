@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public Transform targetWayPoint = null;
 
     public float attackRange;
+    public bool isPatrol;
 
     private int _wayPointIdx;
 
@@ -33,7 +34,7 @@ public class EnemyController : MonoBehaviour
     {
         _fov = GetComponent<FieldOfView>();
         StateMachine = new StateMachine<EnemyController>(this,new EnemyMoveToWayPoint());
-        StateMachine.AddState(new EnemyIdleState(true));
+        StateMachine.AddState(new EnemyIdleState(isPatrol));
         StateMachine.AddState(new EnemyMoveState());
         StateMachine.AddState(new EnemyAttackState());
     }
