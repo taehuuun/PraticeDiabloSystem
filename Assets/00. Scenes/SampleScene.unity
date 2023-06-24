@@ -2246,6 +2246,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6993725498265270914, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
+      propertyPath: wayPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6993725498265270914, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
+      propertyPath: wayPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 2137724810}
+    - target: {fileID: 6993725498265270914, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
+      propertyPath: wayPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1371875405}
+    - target: {fileID: 6993725498265270914, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
+      propertyPath: wayPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 2006732531}
+    - target: {fileID: 6993725498265270914, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
+      propertyPath: wayPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 246991497}
     - target: {fileID: 7540919283991660289, guid: b7d8e4dcf49d3d144b1f788b2bcb645a, type: 3}
       propertyPath: m_Name
       value: Enemy
