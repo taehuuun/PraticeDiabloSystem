@@ -1,5 +1,5 @@
 public interface IAttackable
 {
-    // AttackBehaviour curAttackBehaviour { get; }
+    AttackBehaviour AttackBehaviour { get; }
     void OnExecuteAttack(int attackIdx);
 }
