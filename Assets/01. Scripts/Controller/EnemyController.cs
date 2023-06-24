@@ -33,7 +33,7 @@ public class EnemyController : MonoBehaviour
     {
         _fov = GetComponent<FieldOfView>();
         StateMachine = new StateMachine<EnemyController>(this,new EnemyMoveToWayPoint());
-        StateMachine.AddState(new EnemyIdleState());
+        StateMachine.AddState(new EnemyIdleState(true));
         StateMachine.AddState(new EnemyMoveState());
         StateMachine.AddState(new EnemyAttackState());
     }
