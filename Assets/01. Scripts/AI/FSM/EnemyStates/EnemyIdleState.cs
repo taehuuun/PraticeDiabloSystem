@@ -8,10 +8,15 @@ public class EnemyIdleState : State<EnemyController>
     protected readonly int isMove = Animator.StringToHash("Move");
     protected readonly int moveSpeed = Animator.StringToHash("MoveSpeed");
     
-    private bool _isPatrol;
+    private bool _isPatrol = true;
     private float _minIdleTime = 0f;
     private float _maxIdleTime = 3.0f;
     private float _idleTime = 0f;
+
+    public EnemyIdleState(bool isPatrol)
+    {
+        _isPatrol = isPatrol;
+    }
     
     public override void OnInitialized()
     {
