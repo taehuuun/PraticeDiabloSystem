@@ -8,7 +8,8 @@ public abstract class AttackBehaviour : MonoBehaviour
 
     public GameObject effect;
     public LayerMask targetMask;
-    
+
+    public bool IsValilalbe;
     public int animationIdx;
     public int priority;
     public int damage = 10;
@@ -16,6 +17,7 @@ public abstract class AttackBehaviour : MonoBehaviour
 
     [SerializeField] protected float coolTime;
     protected float calCoolTime = 0f;
+    
     
     private void Start()
     {

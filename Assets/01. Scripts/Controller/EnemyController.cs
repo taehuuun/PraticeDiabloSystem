@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
         // StateMachine.AddState(new EnemyAttackState());
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         StateMachine.Update(Time.deltaTime);
     }
