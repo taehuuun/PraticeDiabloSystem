@@ -7,8 +7,12 @@ public class EnemyController : MonoBehaviour
     private FieldOfView _fov;
 
     public Transform Target => _fov.Target;
+    public Transform[] wayPoints;
+    public Transform targetWayPoint = null;
 
     public float attackRange;
+
+    private int _wayPointIdx;
 
     public bool IsAbleAttack
     {
@@ -41,5 +45,18 @@ public class EnemyController : MonoBehaviour
     public Transform SearchEnemy()
     {
         return Target;
+    }
+    public Transform FindNextWayPoint()
+    {
+        targetWayPoint = null;
+
+        if (wayPoints.Length > 0)
+        {
+            targetWayPoint = wayPoints[_wayPointIdx];
+        }
+
+        _wayPointIdx = (_wayPointIdx + 1) % wayPoints.Length;
+        
+        return targetWayPoint;
     }
 }
