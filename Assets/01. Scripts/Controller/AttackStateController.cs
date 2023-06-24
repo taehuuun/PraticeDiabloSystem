@@ -29,7 +29,12 @@ public class AttackStateController : MonoBehaviour
         IsInAttackState = false;
         exitAttackStateController?.Invoke();
     }
-    
+
+    public void OnCheckAttackCollider(int attack)
+    {
+        GetComponent<IAttackable>()?.OnExecuteAttack(attack);
+    }
+
     private void EnterAttackState()
     {
         
