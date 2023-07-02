@@ -1777,6 +1777,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1213102206294757582}
+  - {fileID: 6335704338999130101}
   m_Father: {fileID: 3406449355454485501}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2033,6 +2034,37 @@ Transform:
   m_Father: {fileID: 4146647549363155249}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6654397003060127542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6335704338999130101}
+  m_Layer: 0
+  m_Name: projectilePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6335704338999130101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6654397003060127542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0.218}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7523872297540411723}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6698317750295113608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,6 +2175,7 @@ GameObject:
   - component: {fileID: 4898386270455939073}
   - component: {fileID: 6014138823918594095}
   - component: {fileID: 5157434169308981671}
+  - component: {fileID: 5790465176276605222}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2196,12 +2229,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7540919283991660289}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3d16051c260e954c902877386e24847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints: []
+  wayPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   targetWayPoint: {fileID: 0}
   attackRange: 5.5
   isPatrol: 0
@@ -2275,6 +2312,28 @@ MonoBehaviour:
     m_Bits: 64
   detectTargets: []
   delay: 0.2
+--- !u!114 &5790465176276605222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540919283991660289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a037edf4d3f5145b825e586cc443c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wayPoints: []
+  targetWayPoint: {fileID: 0}
+  attackRange: 5
+  isPatrol: 0
+  projectileTransform: {fileID: 7523872297540411723}
+  hitTransform: {fileID: 656127895261106225}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  maxHealth: 0
 --- !u!1 &7603742427466335880
 GameObject:
   m_ObjectHideFlags: 0
