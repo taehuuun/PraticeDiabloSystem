@@ -10,7 +10,7 @@ public class EnemyCombatController : EnemyController, IAttackable, IDamageable
     
     public int maxHealth;
 
-    private List<AttackBehaviour> _attackBehaviours;
+    [SerializeField] private List<AttackBehaviour> attackBehaviours = new List<AttackBehaviour>();
     private Animator _animator;
 
     private readonly int _hashHitTrigger = Animator.StringToHash("Hit");
@@ -24,7 +24,6 @@ public class EnemyCombatController : EnemyController, IAttackable, IDamageable
     {
         base.Start();
         _animator = GetComponent<Animator>();
-        _attackBehaviours = new List<AttackBehaviour>();
         StateMachine.AddState(new EnemyMoveState());
         StateMachine.AddState(new EnemyAttackState());
         InitAttackBehaviour();
@@ -72,7 +71,7 @@ public class EnemyCombatController : EnemyController, IAttackable, IDamageable
 
     private void InitAttackBehaviour()
     {
-        foreach (var behaviour in _attackBehaviours)
+        foreach (var behaviour in attackBehaviours)
         {
             if (CurAttackBehaviour == null)
             {
@@ -89,7 +88,7 @@ public class EnemyCombatController : EnemyController, IAttackable, IDamageable
         {
             CurAttackBehaviour = null;
 
-            foreach (var attackBehaviour in _attackBehaviours)
+            foreach (var attackBehaviour in attackBehaviours)
             {
                 if (attackBehaviour.IsValilalbe)
                 {

@@ -20,10 +20,13 @@ public class EnemyAttackState : State<EnemyController>
     {
         if (_attackable ==null || Equals(_attackable.CurAttackBehaviour, null))
         {
+            Debug.Log($"AttackAblae Null : {_attackable == null}");
+            Debug.Log($"CurAttackBehaviour Null : {_attackable.CurAttackBehaviour == null}");
             stateMachine.ChangeState<EnemyIdleState>();
             return;
         }
 
+        Debug.Log("AttackAble 존재 공격 애니메이션 전환");
         _attackStateController.enterAttackStateController += OnEnterAttackState;
         _attackStateController.exitAttackStateController += OnExitAttackState;
         

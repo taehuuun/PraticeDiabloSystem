@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAttackBehaviour : MonoBehaviour
+public class MeleeAttackBehaviour : AttackBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public ManualCollision attackCollision;
+    
+    public override void ExecuteAttack(GameObject target = null, Transform startPoint = null)
     {
-        
-    }
+        Collider[] colliders = attackCollision?.CheckOverlapBox(targetMask);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (var collider in colliders)
+        {
+            if (collider.gameObject == target)
+            {
+                collider.GetComponent<IDamageable>()?.TakeDamage(damage,effect);
+                return;
+            }
+        }
     }
 }
