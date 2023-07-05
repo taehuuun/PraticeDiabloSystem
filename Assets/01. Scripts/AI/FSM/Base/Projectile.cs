@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -59,6 +60,14 @@ public class Projectile : MonoBehaviour
         if (shotSfx && GetComponent<AudioSource>())
         {
             GetComponent<AudioSource>().PlayOneShot(shotSfx);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (speed != 0 && _rigidbody)
+        {
+            _rigidbody.position += (transform.forward) * (speed * Time.deltaTime);
         }
     }
 }
