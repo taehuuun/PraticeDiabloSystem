@@ -18,6 +18,8 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
+        
         if (target)
         {
             Vector3 dest = target.transform.position;
