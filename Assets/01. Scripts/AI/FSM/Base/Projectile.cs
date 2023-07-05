@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -68,6 +67,51 @@ public class Projectile : MonoBehaviour
         if (speed != 0 && _rigidbody)
         {
             _rigidbody.position += (transform.forward) * (speed * Time.deltaTime);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_isCollied)
+        {
+            return;
+        }
+
+        _isCollied = true;
+
+        Collider projectileCollider = GetComponent<Collider>();
+        projectileCollider.enabled = false;
+
+        if (hitSfx && GetComponent<AudioSource>())
+        {
+            GetComponent<AudioSource>().PlayOneShot(hitSfx);
+        }
+
+        speed = 0;
+        _rigidbody.isKinematic = true;
+
+        ContactPoint contact = collision.contacts[0];
+        Quaternion contactRotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
+        Vector3 contactPosition = contact.point;
+
+        if (hitEffectPrefab)
+        {
+            GameObject hitVFX = Instantiate(hitEffectPrefab,contactPosition,contactRotation);
+            ParticleSystem particle = hitVFX.GetComponent<ParticleSystem>();
+            
+            if (particle)
+            {
+                Destroy(hitVFX, particle.main.duration);
+            }
+            else
+            {
+                ParticleSystem childParticle = hitVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
+
+                if (childParticle)
+                {
+                    Destroy(hitVFX,particle.main.duration);
+                }
+            }
         }
     }
 }
