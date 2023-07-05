@@ -124,6 +124,8 @@ public class Projectile : MonoBehaviour
         {
             damageable.TakeDamage(attackBehaviour?.damage ?? 0, null);
         }
+
+        StartCoroutine(DestoryParticle(0.0f));
     }
 
     private IEnumerator DestoryParticle(float waitTime)
