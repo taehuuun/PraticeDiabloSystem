@@ -153,5 +153,6 @@ public class Projectile : MonoBehaviour
         }
 
         yield return new WaitForSeconds(waitTime);
+        Destroy(gameObject);
     }
 }
