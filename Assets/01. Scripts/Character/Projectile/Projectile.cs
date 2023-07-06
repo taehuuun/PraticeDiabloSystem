@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     private bool _isCollied;
     private Rigidbody _rigidbody;
 
-    private void Start()
+    protected virtual void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         
