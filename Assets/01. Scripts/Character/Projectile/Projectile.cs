@@ -66,7 +66,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (speed != 0 && _rigidbody)
         {
