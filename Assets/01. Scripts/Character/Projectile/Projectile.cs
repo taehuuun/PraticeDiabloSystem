@@ -128,7 +128,7 @@ public class Projectile : MonoBehaviour
         StartCoroutine(DestoryParticle(0.0f));
     }
 
-    private IEnumerator DestoryParticle(float waitTime)
+    protected IEnumerator DestoryParticle(float waitTime)
     {
         if (transform.childCount > 0 && waitTime != 0)
         {
