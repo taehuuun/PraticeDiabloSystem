@@ -9,6 +9,14 @@ public class CameraFacing : MonoBehaviour
     public bool reverseFace = false;
     public Axis axis = Axis.Up;
 
+    private void Awake()
+    {
+        if (_referenceCamera == null)
+        {
+            _referenceCamera = Camera.main;
+        }
+    }
+    
     public Vector3 GetAxis(Axis refAxis)
     {
         switch (refAxis)
