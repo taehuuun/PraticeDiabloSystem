@@ -27,7 +27,7 @@ public class CameraFacing : MonoBehaviour
         transform.LookAt(targetPos, targetOrientation);
     }
 
-    public Vector3 GetAxis(Axis refAxis)
+    private Vector3 GetAxis(Axis refAxis)
     {
         switch (refAxis)
         {
