@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum Axis { Up, Down, Left, Right, Forward}
@@ -16,7 +17,16 @@ public class CameraFacing : MonoBehaviour
             _referenceCamera = Camera.main;
         }
     }
-    
+
+    private void LateUpdate()
+    {
+        Vector3 targetPos = transform.position +
+                            _referenceCamera.transform.rotation * (reverseFace ? Vector3.forward : Vector3.back);
+        Vector3 targetOrientation = _referenceCamera.transform.rotation * GetAxis(axis);
+        
+        transform.LookAt(targetPos, targetOrientation);
+    }
+
     public Vector3 GetAxis(Axis refAxis)
     {
         switch (refAxis)
