@@ -60,6 +60,11 @@ public class EnemyCombatController : EnemyController, IAttackable, IDamageable
 
         Health -= damage;
 
+        if (hpUI != null)
+        {
+            hpUI.Value = Health;
+        }
+        
         if (effect)
         {
             Instantiate(effect, hitTransform);
