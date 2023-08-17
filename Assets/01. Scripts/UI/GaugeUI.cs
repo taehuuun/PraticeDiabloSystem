@@ -28,4 +28,9 @@ public class GaugeUI : MonoBehaviour
     {
         _canvas = GetComponent<Canvas>();
     }
+
+    private void OnEnable()
+    {
+        _canvas.enabled = true;
+    }
 }
