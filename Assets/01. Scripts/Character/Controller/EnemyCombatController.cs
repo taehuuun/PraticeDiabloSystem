@@ -5,6 +5,7 @@ public class EnemyCombatController : EnemyController, IAttackable, IDamageable
 {
     // 필드
     [SerializeField] private List<AttackBehaviour> attackBehaviours = new List<AttackBehaviour>();
+    [SerializeField] private GaugeUI hpUI;
     public Transform projectileTransform;
     public Transform hitTransform;
     public LayerMask targetMask;
