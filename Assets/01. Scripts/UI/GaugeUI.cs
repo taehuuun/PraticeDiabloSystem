@@ -23,4 +23,9 @@ public class GaugeUI : MonoBehaviour
         get => gauge.value;
         set => gauge.value = value;
     }
+
+    private void Awake()
+    {
+        _canvas = GetComponent<Canvas>();
+    }
 }
