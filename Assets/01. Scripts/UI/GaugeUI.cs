@@ -16,4 +16,10 @@ public class GaugeUI : MonoBehaviour
         get => gauge.maxValue;
         set => gauge.maxValue = value;
     }
+
+    public float Value
+    {
+        get => gauge.value;
+        set => gauge.value = value;
+    }
 }
