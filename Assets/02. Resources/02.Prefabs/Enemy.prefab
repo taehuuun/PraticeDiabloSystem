@@ -1532,6 +1532,7 @@ GameObject:
   - component: {fileID: 21219373305314546}
   - component: {fileID: 2883996351123862301}
   - component: {fileID: 7045277572695041529}
+  - component: {fileID: 6991331365186462555}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1623,6 +1624,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6991331365186462555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620523594951710198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b7f34cae8a92143967ac07be4fb75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reverseFace: 0
+  axis: 0
 --- !u!1 &3784644015408681065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,8 +2459,9 @@ GameObject:
   m_Component:
   - component: {fileID: 12723176595579448}
   - component: {fileID: 3572261998453869149}
+  - component: {fileID: 3613382844851414882}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2524,6 +2540,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3613382844851414882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6919381416156535290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bac04ad1a0310b4a8439fa8ba83e36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gauge: {fileID: 3572261998453869149}
 --- !u!1 &7022846607297791844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,14 +2789,15 @@ MonoBehaviour:
   targetWayPoint: {fileID: 0}
   attackRange: 30.17
   isPatrol: 0
+  attackBehaviours:
+  - {fileID: 3731952032600418181}
+  hpUI: {fileID: 0}
   projectileTransform: {fileID: 7523872297540411723}
   hitTransform: {fileID: 656127895261106225}
   targetMask:
     serializedVersion: 2
     m_Bits: 128
   maxHealth: 0
-  attackBehaviours:
-  - {fileID: 3731952032600418181}
 --- !u!114 &4341240131698498119
 MonoBehaviour:
   m_ObjectHideFlags: 0
