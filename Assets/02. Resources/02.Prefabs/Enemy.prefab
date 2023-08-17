@@ -2791,7 +2791,7 @@ MonoBehaviour:
   isPatrol: 0
   attackBehaviours:
   - {fileID: 3731952032600418181}
-  hpUI: {fileID: 0}
+  hpUI: {fileID: 3613382844851414882}
   projectileTransform: {fileID: 7523872297540411723}
   hitTransform: {fileID: 656127895261106225}
   targetMask:
