@@ -10,4 +10,10 @@ public class GaugeUI : MonoBehaviour
         get => gauge.minValue;
         set => gauge.minValue = value;
     }
+
+    public float MaxValue
+    {
+        get => gauge.maxValue;
+        set => gauge.maxValue = value;
+    }
 }
