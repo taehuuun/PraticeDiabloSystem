@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class GaugeUI : MonoBehaviour
 {
     [SerializeField] private Slider gauge;
+    private Canvas _canvas;
         
     public float MinValue
     {
