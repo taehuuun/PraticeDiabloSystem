@@ -4,21 +4,19 @@ using UnityEngine;
 public class EnemyCombatController : EnemyController, IAttackable, IDamageable
 {
     // 필드
+    [SerializeField] private List<AttackBehaviour> attackBehaviours = new List<AttackBehaviour>();
     public Transform projectileTransform;
     public Transform hitTransform;
     public LayerMask targetMask;
+    private Animator _animator;
+    
+    public AttackBehaviour CurAttackBehaviour { get; private set; }
+    public int Health { get; private set; }
     
     public int maxHealth;
-
-    [SerializeField] private List<AttackBehaviour> attackBehaviours = new List<AttackBehaviour>();
-    private Animator _animator;
-
-    private readonly int _hashHitTrigger = Animator.StringToHash("Hit");
-    
-    // 프로퍼티
-    public AttackBehaviour CurAttackBehaviour { get; private set; }
     public bool IsAlive => Health > 0;
-    public int Health { get; private set; }
+    
+    private readonly int _hashHitTrigger = Animator.StringToHash("Hit");
     
     protected override void Start()
     {
