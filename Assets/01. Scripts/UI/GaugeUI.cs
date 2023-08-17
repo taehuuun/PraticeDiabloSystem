@@ -33,4 +33,9 @@ public class GaugeUI : MonoBehaviour
     {
         _canvas.enabled = true;
     }
+
+    private void OnDisable()
+    {
+        _canvas.enabled = false;
+    }
 }
