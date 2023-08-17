@@ -22,12 +22,19 @@ public class EnemyCombatController : EnemyController, IAttackable, IDamageable
     protected override void Start()
     {
         base.Start();
+        Health = maxHealth;
         _animator = GetComponent<Animator>();
         StateMachine.AddState(new EnemyMoveState());
         StateMachine.AddState(new EnemyAttackState());
-        InitAttackBehaviour();
 
-        Health = maxHealth;
+        if (hpUI != null)
+        {
+            hpUI.MinValue = 0;
+            hpUI.MaxValue = maxHealth;
+            hpUI.Value = Health;
+        }
+        
+        InitAttackBehaviour();
     }
 
     protected override void Update()
